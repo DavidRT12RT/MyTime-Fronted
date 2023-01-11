@@ -1,0 +1,337 @@
+.titulo{
+	color:#4a4a4a;
+  	font-family: 'Lato', sans-serif;
+  	line-height: 1.5;
+  	font-size: 32px;
+  	font-weight: 900;
+}
+.descripcion{
+  color:#000;
+  font-family: 'Lato',sans-serif;
+  font-size:20px; 
+	font-weight: 400;
+}
+.titulo-descripcion{
+  color:#000;
+  font-family: 'Lato',sans-serif;
+  font-size:18px; 
+  font-weight: 700;
+}
+
+.nota {
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  font-size: 16px;
+}
+
+.messagesContainer{
+    background-color:rgba(255,255,255,1.00);
+    min-height: 100vh;
+
+    width: 80%;
+    margin:0 auto;
+
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 100vh;
+}
+
+@media (min-width:100px) and (max-width:1000px) {
+    .messagesContainer {width: 100%;}
+}
+
+/* Inbox People component*/
+.InboxPeople{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    height: 100%;
+}
+
+/* Messages Chat component*/
+.MessagesChatMainContainer{
+    /*grid-column: 1 / -1;*/
+}
+
+
+.InboxPeopleUsersContainer{
+    margin-top:20px;
+}
+
+.mensajes-titulo{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.InboxPeopleUsersContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.InboxpeopleItem {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+
+    padding: 20px;
+}
+
+.active-chat{
+    background-color: rgb(247, 249, 249);
+}
+
+
+.InboxpeopleItem *{
+    font-size: 15px;
+    margin:0px;
+}
+
+.InboxpeopleItem:hover{
+
+    background-color: rgb(247, 249, 249);
+}
+
+.InboxPeopleItemUserInfo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 5px;
+}
+
+.InboxPeopleItemUserInfo h1, .InboxPeopleItemUserInfo p{
+    font-size: 15px;
+}
+
+.InboxpeopleItem .lastMessage{
+    color:#536471;
+}
+
+
+.SelectChatContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.SelectChatPhoneContainer{
+    display: none;
+
+}
+
+@media(min-width:100px) and (max-width:1000px) {
+    .SelectChatContainer{
+        display: none;
+    }
+
+    .InboxPeople{
+        grid-column: 1 / -1;
+    }
+
+    .MessagesChatMainContainer{
+        grid-column: 1 / -1;
+    }
+
+    .enabled{
+        display: block;
+    }
+
+    .disabled{
+        display: none;
+    }
+
+    .SelectChatPhoneContainer{
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+.SelectChatContainer .titulo{
+    font-size:31px;
+    color:rgb(0, 0, 0);
+}
+
+.SelectChatContainer .descripcion{
+    font-size: 15px;
+    color:#536471;
+}
+
+.SelectChatPhoneContainer .titulo{
+    font-size:31px;
+    color:rgb(0, 0, 0);
+}
+
+.SelectChatPhoneContainer .descripcion{
+    font-size: 15px;
+    color:#536471;
+}
+
+.MessagesUsers{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    overflow: auto;
+    height:90%;
+
+    position: relative;
+
+}
+
+.MessageTopBarContainer{
+    position: sticky;
+    left: 0px;    
+    top: 0px;
+    z-index: 1;
+
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    background-color:#fff;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 25px;
+}
+
+.MessageTopBarLeftIcon{
+    font-size: 25px;
+    color:#000;
+    cursor: pointer;
+}
+
+
+.MessageChatUserInfo{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+
+    position:relative;
+}
+
+.MessageChatUserInfo .MessageTopBarLeftIcon{
+    position:absolute;
+    left:10px;
+    top:0px;
+}
+
+.MessageChatUserInfo .content{
+    margin-top: 10px;
+}
+
+.MessageChatUserInfo .content > p{
+    font-size: 15px;
+    margin:0px;
+}
+
+.MessageChatUserInfo .ExtraInfo{
+    margin-top: 10px;
+}
+
+.MessageChatUserInfo .ExtraInfo > *{
+    font-size: 15px;
+    color:rgb(83, 100, 113);
+}
+
+
+.MessageChatUserInfo:hover{
+    background-color: rgb(239, 243, 244);
+}
+
+.IncomingMessageContainer{
+    position: relative;
+    background-color: rgb(239, 243, 244);
+    padding: 10px;
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 10px 10px 10px 0px;
+    min-width: 150px;
+    width: fit-content;
+    max-width: 75%;
+
+    align-self: flex-start;
+}
+
+.IncomingMessageContainer .descripcion{
+    font-size: 15px;
+    color:rgb(0, 0, 0);
+}
+
+.OutGoingMessageContainer{
+    position: relative;
+    background-color: rgb(29, 155, 240);
+    padding: 10px;
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 10px 10px 0px 10px;
+    min-width: 150px;
+    width: fit-content;
+    max-width: 75%;
+
+    align-self: flex-end;
+}
+
+.OutGoingMessageContainer .descripcion{
+    font-size: 15px;
+    color:rgb(255, 255, 255);
+}
+
+.MessageInfoContainer .descripcion{
+    font-size: 13px;
+    color:rgb(0, 0, 0);
+    margin:0px;
+}
+
+.IncomingMessageContainer .MessageInfoContainer{
+    position: absolute;
+    bottom: -25px;
+    left: 0px;
+}
+
+.OutGoingMessageContainer .MessageInfoContainer{
+    position:absolute;
+    right: 0px;
+    bottom: -25px;
+}
+
+.SendMessageContainer{
+    margin: 20px;
+    background-color: rgb(239, 243, 244);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.SendMessageBtn{
+    border:none;
+}
+
+.SendMessageInput{
+    font-size: 15px;
+    width: 90%;
+    border:none;
+    background-color: inherit;
+}
+
+.SendMessageInput:focus{
+    outline:none;
+    background-color: inherit;
+}
+
+.SendMessageIcon{
+    font-size: 25px;
+    color:rgb(29, 155, 240);
+    cursor:pointer;
+}
