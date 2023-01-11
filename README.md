@@ -11,7 +11,7 @@ Social media proyect using **MERN STACK** , hope you like it!
 
 1.-Install node modules
 ```
-    npm install
+npm install
 ```
 
 2.-Make a new file called **.env** and copy the variable that is on the .env.example 
@@ -28,7 +28,7 @@ Proyecto de una red social usando **MERN STACK**, espero les guste!
 1.-Instala los paquetes de node
 
 ```
-    npm install
+npm install
 ```
 
 2.-Crea un nuevo archivo llamado **.env** y copia la variable que esta en el archivo **.env.example**, despues necesitaras la direccion hacia 
