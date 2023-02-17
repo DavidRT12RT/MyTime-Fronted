@@ -1,8 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { AuthContext } from '../auth/AuthContext';
-import Swal from "sweetalert2";
 
+//Context's
+import { AuthContext } from '../auth/AuthContext';
+
+//Alert's
+import Swal from "sweetalert2";
 
 //Custom Hooks
 import useForm from '../hooks/useForm';

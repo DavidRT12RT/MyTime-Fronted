@@ -7,9 +7,10 @@ import { ChatContext } from '../context/chat/ChatContext';
 import "../css/Chat.css";
 
 //Component's
-import { InboxPeople } from '../components/InboxPeople';
-import { SelectChat } from '../components/SelectChat';
-import { MessagesChat } from '../components/MessagesChat';
+import { InboxPeople } from '../components/ChatPage/InboxPeople';
+import { MessagesChat } from '../components/ChatPage/MessagesChat';
+import { SelectChat } from '../components/ChatPage/SelectChat';
+
 
 export const ChatPage = () => {
     

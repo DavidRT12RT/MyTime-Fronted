@@ -10,6 +10,9 @@ import { RegisterPage } from '../pages/RegisterPage'
 import "../css/Auth.css";
 
 export const AuthRouter = () => {
+    document.body.className = "";
+    document.body.classList.add("bg-auths-router");
+
     return (
 	    <div className="limiter">
 		    <div className="container-login100">

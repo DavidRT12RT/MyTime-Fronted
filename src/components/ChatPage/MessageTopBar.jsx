@@ -1,10 +1,12 @@
 import React from 'react'
 
 import { Avatar } from 'antd';
+
 //Icon's
 import { ArrowLeft } from 'react-bootstrap-icons';
 
-import { types } from '../types/types';
+import { types } from '../../types/types';
+
 
 export const MessageTopBar = ({user,isMessageTopBarVisible,dispatch}) => {
     

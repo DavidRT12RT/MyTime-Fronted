@@ -4,12 +4,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Avatar } from 'antd'
 
 //Context's
-import { ChatContext } from '../context/chat/ChatContext';
-import { types } from '../types/types';
+import { ChatContext } from '../../context/chat/ChatContext';
+import { types } from '../../types/types';
 
 //Helper's
-import { fetchConToken } from '../helpers/fetch';
-import { scrollToBottom } from '../helpers/scrollToBottom';
+import { fetchConToken } from '../../helpers/fetch';
+import { scrollToBottom } from '../../helpers/scrollToBottom';
 
 export const InboxPeopleItem = ({usuario}) => {
 

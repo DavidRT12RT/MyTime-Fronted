@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 
 //Context's
-import { AuthContext } from '../auth/AuthContext';
+import { AuthContext } from '../../auth/AuthContext';
 
 //Component's
 import { MessageChatUserInfo } from './MessageChatUserInfo';

@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { ArrowLeft } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 
 //Context's
-import { AuthContext } from '../auth/AuthContext';
+import { AuthContext } from '../../auth/AuthContext';
 
 //Component's
 import { InboxPeopleItem } from './InboxPeopleItem'
@@ -30,15 +32,14 @@ export const InboxPeople = ({usuarios,chatState}) => {
     }
 
 
-
     return (
         <div 
             className={"InboxPeople " + (chatState.chatActivo === null ? "enabled" : "disabled")} 
         >
             <div className="p-3">
                 <div className="d-flex justify-content-between align-items-center mb-3">
-                    <h1 className="titulo-descripcion mensajes-titulo">Usuarios</h1>
-                    <button type="primary" className="btn btn-outline-primary" onClick={logout}>Cerrar sesión</button>
+                    <h1 className="titulo text-dark">Usuarios</h1>
+                    <Link to={`/news`}><button type="primary" className="btn btn-primary"><ArrowLeft/> Volver</button></Link>
                 </div>
                 <input 
                     onChange={handleFilterUsers} 

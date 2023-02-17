@@ -4,12 +4,13 @@ import React, { useContext } from 'react'
 import { SendFill } from 'react-bootstrap-icons';
 
 //Custom hook's
-import useForm from '../hooks/useForm';
+import useForm from '../../hooks/useForm';
 
 //Context's
-import { AuthContext } from '../auth/AuthContext';
-import { SocketContext } from '../context/SocketContext';
-import { ChatContext } from '../context/chat/ChatContext';
+import { AuthContext } from '../../auth/AuthContext';
+import { ChatContext } from '../../context/chat/ChatContext';
+import { SocketContext } from '../../context/SocketContext';
+
 
 export const SendMessage = () => {
 

@@ -1,4 +1,4 @@
-const baseURL = process.env.REACT_APP_API_URL;
+const baseURL = `${process.env.REACT_APP_BACKEND_API_URL}/api`;
 
 export const fetchSinToken = async(endpoint,data,method="GET") => {
 
@@ -17,6 +17,7 @@ export const fetchSinToken = async(endpoint,data,method="GET") => {
 
 export const fetchConToken = async(endpoint,data,method="GET") => {
 
+
     const url = `${baseURL}${endpoint}`;
     const token = localStorage.getItem("token") || "";
 
@@ -33,5 +34,26 @@ export const fetchConToken = async(endpoint,data,method="GET") => {
             headers:{"Content-type":"application/json","x-token":token},
             body:JSON.stringify(data)
         })
+    }
+}
+
+export const fetchConTokenSinJSON = (endpoint,data,method = "POST") =>{
+    const url = `${baseURL}${endpoint}`;
+    const token = localStorage.getItem('token') || "";
+
+
+    switch (method) {
+        case "POST":
+        case "PUT":
+            return fetch(url,{
+                method,
+                headers:{
+                    'x-token':token
+                },
+                body:data
+            });
+        
+        default:
+            break;
     }
 }

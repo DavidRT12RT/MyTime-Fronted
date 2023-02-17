@@ -22,7 +22,7 @@ export const AuthProvider = ({children}) => {
 
     const login = async(email,password) => {
 
-        const resp = await fetchSinToken(`/login/`,{email,password},"POST");
+        const resp = await fetchSinToken(`/auth/login/`,{email,password},"POST");
         const body = await resp.json();
     
         if(resp.status != 200) return false;
@@ -40,10 +40,10 @@ export const AuthProvider = ({children}) => {
 
     const register = async(nombre,email,password) => {
 
-        const resp = await fetchSinToken(`/login/new/`,{nombre,email,password},"POST");
+        const resp = await fetchSinToken(`/usuarios/`,{nombre,email,password},"POST");
         const body = await resp.json();
 
-        if(resp.status != 200) return body.msg;
+        if(resp.status != 201) return body.msg;
 
          //PETICION HECHA CON EXITO
         localStorage.setItem("token",body.token);
@@ -72,7 +72,7 @@ export const AuthProvider = ({children}) => {
         }
 
         //TOKEN ES VALIDO AUN ?
-        const resp = await fetchConToken(`/login/renew`);
+        const resp = await fetchConToken(`/auth/renew`);
         const body = await resp.json();
 
         if(resp.status != 200){

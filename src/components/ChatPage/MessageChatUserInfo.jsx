@@ -7,7 +7,7 @@ import moment from "moment";
 import { ArrowLeft } from 'react-bootstrap-icons';
 
 //Context's
-import { types } from '../types/types';
+import { types } from '../../types/types';
 
 
 export const MessageChatUserInfo = ({user,dispatch}) => {

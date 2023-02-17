@@ -8,7 +8,13 @@ import { AppRouter } from "./router/AppRouter";
 
 import moment from "moment";
 import "moment/locale/es";
+
+//Global style's
+import "./css/globalStyles.css";
+
+
 moment.locale("es");
+
 
 export const ChatApp = () => {
     return (

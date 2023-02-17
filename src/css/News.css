@@ -1,0 +1,334 @@
+body{
+    background-color:#F2F3F5;
+}
+
+.containerPrincipalNoticias{
+    width:100vw;
+    height: 100vh;
+
+    margin:0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+/* Estilo de extra */
+.containerPrincipalNoticias .menuOptions{
+    grid-area: 1 / 1 / 6 / 2;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding: 20px;
+}
+
+
+.menuOptions p{
+    color: #000 !important;
+    padding: 10px;
+}
+
+.menuOptions p:hover{
+    /* background-color: #f0f2f5; */
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.containerPrincipalNoticias .menuOptions > * {
+    width: 100%;
+    height: fit-content;
+}
+
+.containerPrincipalNoticias .menuOptions .userInfo{
+    align-self: flex-end;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+
+}
+
+/* Estilo de container de publicaciones*/
+.containerPrincipalNoticias .publicacionesContainer{
+    grid-area: 1 / 2 / 6 / 4;
+    align-self: start;
+
+    width: 100%;
+    max-height: 100%;
+    padding: 20px;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.containerPrincipalNoticias .publicacionesContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.containerPrincipalNoticias .publicacionesContainer{
+    scrollbar-width: none; 
+}
+
+/* Estilo de messages */
+.containerPrincipalNoticias .messagesInbox{
+    grid-area: 1 / 4 / 6 / 5;
+    align-self: end;
+    width: 80%;
+    padding: 20px;
+
+    text-align:center;
+    justify-self: center;
+    color: #000;
+    background-color:#fff;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    cursor: pointer;
+}
+
+.menuOptions .mobileMenu{
+    display: none;
+}
+
+.menuOptions .mobileMenu p{
+    font-size: 25px;
+
+}
+
+@media(min-width:100px) and (max-width:1000px) {
+    .containerPrincipalNoticias{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+
+        padding: 0px;
+    }
+
+    .containerPrincipalNoticias .publicacionesContainer{
+        grid-area: 1 / 1 / 5 / 2;
+        padding: 15px;
+    }
+
+    .containerPrincipalNoticias .menuOptions{
+        grid-area: 5 / 1 / 6 / 2;
+
+        padding: 0px;
+    }
+
+    .containerPrincipalNoticias .menuOptions .desktopMenu{
+        display: none;
+    }
+
+
+    .containerPrincipalNoticias .menuOptions .mobileMenu{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-around;
+
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+
+    .containerPrincipalNoticias .menuOptions .userInfo{
+        display: none;
+    }
+
+    .containerPrincipalNoticias .messagesInbox{
+        display: none;
+    }
+}
+
+
+
+/* Estilo de publicacion*/
+.publicacionContainer{
+    width: 100%;
+    height: fit-content;
+    padding:20px;
+    background-color:#fff;
+
+    border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    position:relative;
+}
+
+.publicacionContainer .optionsPublicationContainer{
+    width: 300px;
+    height: fit-content;
+    padding:10px;
+    background-color:#fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 15px;
+    border:1px solid black;
+    z-index: 1;
+    position:absolute;
+    right: 30px;
+    top: 60px;
+}
+
+.optionsPublicationContainer:nth-child():hover{
+    cursor:pointer;
+    background-color:#f0f2f5;
+}
+
+
+@media(min-width:100px) and (max-width:1200px){
+    .publicacionContainer{
+        width: 100%;
+    }
+}
+
+.userInformationContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.userInformationContainer .content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.editPublicationButton{
+    width: 40px;
+    height: 40px;
+
+    cursor:pointer;
+}
+
+.publicacionContainer .fotosContainer{
+    margin-bottom: 10px;
+    /*
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    */
+
+    /* Display grid*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    --grid-column-count:1;
+    /* Sets a size for the rows in a grid container*/
+    gap:5px;
+    /*grid-auto-flow: dense; */
+    overflow: hidden;
+}
+
+.publicacionContainer .fotosContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.wide {
+    grid-column: 1 / -1;
+}
+
+.tall{
+    grid-row:span 2;
+}
+
+.accionesregistradascontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:10px 0px 5px 0px;
+}
+
+.botonesReaccionesContainer {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+
+.botonesReaccionesContainer button {
+   border:none; 
+   background-color:#fff;
+   padding:10px;
+   border-radius: 10px;
+}
+
+.botonesReaccionesContainer button:hover{
+   background-color:#f0f2f5;
+}
+
+.comentariosContainer {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.comentariosContainer .comentario{
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    width: 100%;
+}
+
+.comentariosContainer .comentario .content h1{
+    font-size: 13px;
+}
+
+.comentariosContainer .comentario .content p{
+    font-size: 15px;
+}
+
+.comentariosContainer .comentario .content{
+    background-color:#F2F3F5;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+
+@media (min-width:100px) and (max-width:500px){
+    .reaccionesContainer {
+        justify-content: center;
+    }
+}
+
+.comentarioContainer{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    
+}
+
+.comentarioContainer input{
+    font-size: 15px;
+}
